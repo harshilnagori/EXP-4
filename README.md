@@ -1,16 +1,94 @@
 # EXP-4
 # Harshil Nagori
 # 24070123046
-AIM: To study and implement C++ Bitwise Operators.
+Aim
 
-SOFTWARE USED: VS Code
+To:
 
-THEORY: Bitwise operators in C++ are used to perform operations directly on the binary representation of integers. They provide efficient ways to manipulate data at the bit level, which is especially useful in tasks like flag operations, low-level system programming, and memory optimization. The common bitwise operators include:
+    Understand how bitwise operators work in C++
 
-AND (&): Compares each bit of two numbers and returns a new number with bits set to 1 only where both operands have 1.
-OR (|): Returns a result with bits set to 1 if at least one of the corresponding bits in either operand is 1.
-XOR (^): Produces a result where bits are set to 1 only when the corresponding bits in the operands are different.
-NOT (~): Inverts all the bits of the operand, flipping 0s to 1s and 1s to 0s.
-Left Shift (<<): Shifts all bits to the left by a specified number of positions, essentially multiplying the number.
-Right Shift (>>): Shifts all bits to the right, which is equivalent to integer division by powers of two.
-CONCLUSION: Bitwise operators are powerful tools that allow programmers to work directly with the binary form of numbers. While they might seem technical at first glance, mastering them unlocks deeper control over data, especially in performance-critical applications. By studying and implementing bitwise operations, you gain a valuable skill set for tackling more advanced C++ concepts like masking, flag handling, and embedded system coding.
+    Learn how to set (turn ON) and reset (turn OFF) specific bits in a number
+
+Objectives
+
+🔹 Use basic bitwise operators like &, |, ^, ~, <<, >>
+
+🔹 Learn how to change just one bit in a number
+
+🔹 Understand how shifting bits left or right changes the whole value
+Theory:
+What Are Bitwise Operators?
+
+Every number is made of bits (0s and 1s).
+
+Useful when we want to control specific bits — like in LEDs, sensors, switches, flags, etc.
+Common Bitwise Operators in C++
+Operator 	Symbol 	Description
+AND 	& 	Sets bit to 1 only if both bits are 1
+OR 	| 	Sets bit to 1 if at least one bit is 1
+XOR 	^ 	Sets bit to 1 if only one of the bits is 1
+NOT 	~ 	Inverts all bits (0 becomes 1, 1 becomes 0)
+Left Shift 	<< 	Shifts bits to the left, multiplying by 2
+Right Shift 	>> 	Shifts bits to the right, dividing by 2
+Set and Reset a Bit
+
+Sometimes, we don’t want to change the whole number — just one single bit. It is very useful in electronics, where you control just one light or switch.
+To Set a Bit (Make a bit = 1)
+
+num | (1 << 3)
+
+This keeps all other bits the same, and turns bit at position 3 to 1
+To Reset a Bit (Make a bit = 0)
+
+num & (~(1 << 4))
+
+This makes the bit at position 4 = 0, and keeps the rest unchanged.
+Program Description
+Bitwise Operations
+
+Take two numbers (say a = 5 and b = 3)
+
+Apply each bitwise operator and show the result
+
+a & b → AND
+
+a | b → OR
+
+a ^ b → XOR
+
+~a → NOT
+
+a << 1 → Left shift by 1
+
+a >> 1 → Right shift by 1
+Set & Reset Specific Bits
+
+Let’s say we want to set bit 2 of number a → use a | (1 << 2)
+
+To resetF bit 1 of number a → use a & (~(1 << 1))
+
+We can see that before and after values has changed just one bit.
+Concepts Used
+
+Bitwise Operators: &, |, ^, ~, <<, >>
+
+Set a bit: num | (1 << position)
+
+Reset a bit: num & (~(1 << position))
+Sample Output
+Bitwise Operators
+
+AND: 0
+OR: 14
+XOR: 14
+NOT: -13
+LEFT_SHIFT: 48
+RIGHT_SHIFT: 1
+
+Set-Reset Operation
+
+Enter bit to set: 3
+Enter bit to reset: 4
+SET OUTPUT: 88
+RESET OUTPUT: 64
+
